@@ -1,0 +1,37 @@
+{
+  "name": "@worldbrain/storex-hub-gui-nwjs",
+  "version": "0.1.0",
+  "description": "NW.js GUI for Storex Hub",
+  "scripts": {
+    "prepare": "tsc",
+    "prepare:watch": "npm run prepare -- -w",
+    "test": "mocha --require ts-node/register \"ts/**/*.test.ts\"",
+    "test:watch": "mocha -r source-map-support/register -r ts-node/register \"ts/**/*.test.ts\" --watch --watch-extensions ts",
+    "test:coverage": "rm -rf lib ; yarn prepare && nyc --reporter=html --reporter=text mocha 'lib/**/*.test.js'"
+  },
+  "main": "./assets/main.html",
+  "chromium-args": "--enable-logging=stderr",
+  "window": {
+    "show": false,
+    "icon": "./assets/img/appIcon.icns",
+    "resizable": false,
+    "always-on-top": true,
+    "show_in_taskbar": false,
+    "frame": false,
+    "title": "Storex Hub",
+    "width": 370,
+    "height": 360
+  },
+  "keywords": [],
+  "author": "Vincent den Boer",
+  "dependencies": {
+    "@worldbrain/storex-hub": "^0.2.0"
+  },
+  "devDependencies": {
+    "ts-node": "^7.0.1",
+    "typescript": "^3.7.5"
+  },
+  "resolutions": {
+    "**/graphql": "^14.0.0"
+  }
+}
