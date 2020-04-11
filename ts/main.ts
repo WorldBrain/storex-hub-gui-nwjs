@@ -11,3 +11,4 @@ if (require.main === module) {
     main()
 }
 
+// https://github.com/evshiron/nwjs-builder-phoenix
